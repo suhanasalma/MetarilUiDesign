@@ -2,41 +2,41 @@
    {
       "id":1,
       "catName":"MEN",
-      "image":""
+      "image":"https://i.ibb.co/0cPpgJw/0e638368c6d3bd43502f907fae4de101-1.jpg"
    },
    {
       "id":2,
       "catName":"WOMEN",
-      "image":""
+      "image":"https://i.ibb.co/0cPpgJw/0e638368c6d3bd43502f907fae4de101-1.jpg"
    },
    {
       "id":3,
       "catName":"KIDS",
-      "image":""
+      "image":"https://i.ibb.co/0cPpgJw/0e638368c6d3bd43502f907fae4de101-1.jpg"
    },
    {
       "id":4,
       "catName":"SPORTS",
-      "image":""
+      "image":"https://i.ibb.co/0cPpgJw/0e638368c6d3bd43502f907fae4de101-1.jpg"
    },
    {
       "id":5,
       "catName":"SHOES",
-      "image":""
+      "image":"https://i.ibb.co/0cPpgJw/0e638368c6d3bd43502f907fae4de101-1.jpg"
    },
    {
       "id":6,
       "catName":"HAT",
-      "image":""
+      "image":"https://i.ibb.co/0cPpgJw/0e638368c6d3bd43502f907fae4de101-1.jpg"
    },
    {
       "id":7,
       "catName":"WATCH",
-      "image":""
+      "image":"https://i.ibb.co/0cPpgJw/0e638368c6d3bd43502f907fae4de101-1.jpg"
    },
    {
       "id":8,
       "catName":"PANTS",
-      "image":""
+      "image":"https://i.ibb.co/0cPpgJw/0e638368c6d3bd43502f907fae4de101-1.jpg"
    }
 ]

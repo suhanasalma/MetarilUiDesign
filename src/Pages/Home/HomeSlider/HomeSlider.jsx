@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../../../../Assests/1.jpg";
+import image from "../../../Assests/1.jpg"
 import { Box, Typography, Card, CardContent, CardMedia } from "@mui/material";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -52,11 +52,13 @@ const HomeSlider = () => {
                   >
                     {item.title}
                     <br />
-                    <Box sx={{fontSize:"56px" ,fontWeight:"bold"}}>{item.secondTitle}</Box>
-                    <Box sx={{fontSize:"56px", fontWeight:"bold"}}>{item.thirdTitle}</Box>
-                 
+                    <Box sx={{ fontSize: "56px", fontWeight: "bold" }}>
+                      {item.secondTitle}
+                    </Box>
+                    <Box sx={{ fontSize: "56px", fontWeight: "bold" }}>
+                      {item.thirdTitle}
+                    </Box>
                   </Typography>
-                
                 </CardContent>
               </Box>
             </Card>

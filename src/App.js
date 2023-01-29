@@ -3,14 +3,14 @@ import "./App.css";
 
 import { RouterProvider } from "react-router-dom";
 import { router } from "./Routes/PrivateRoutes/PublicRoutes/router";
-import { Box, CssBaseline } from "@mui/material";
+import { Box, Container, CssBaseline } from "@mui/material";
 
 function App() {
   return (
-    <Box >
+    <Container style={{ maxWidth: "1750px" }}>
       <CssBaseline></CssBaseline>
       <RouterProvider router={router}></RouterProvider>
-    </Box>
+    </Container>
   );
 }
 
