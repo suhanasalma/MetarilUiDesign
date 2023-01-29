@@ -173,12 +173,12 @@
 
    },
    {
-      "id":15,
-      "catId":8,
-      "title":"Denim Pants",
-      "price":80,
-      "img":""
-
+     "id": 15,
+     "catId": 8,
+     "title": "Denim Pants",
+     "price": 80,
+     "img": "",
+     "isFeatured": true
    },
    {
       "id":16,

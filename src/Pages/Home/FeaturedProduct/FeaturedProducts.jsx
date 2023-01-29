@@ -11,6 +11,7 @@ import Typography from "@mui/material/Typography";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { fontWeight } from "@mui/system";
 import FeaturedProduct from "./FeaturedProduct";
+import useStyle from "./FeaturedProductsStyle";
 
 
 const FeaturedProducts = () => {
@@ -25,6 +26,7 @@ const FeaturedProducts = () => {
   }, []);
 
   console.log(featured);
+  const classes = useStyle();
 
   return (
     <Container style={{ maxWidth: "1500px", marginTop: "100px" }}>
@@ -35,13 +37,14 @@ const FeaturedProducts = () => {
             See All <ArrowForwardIcon sx={{ marginLeft: "5px" }} />
           </Button>
         </Box>
+
         <Grid
+          spacing={{ xs: 4, md: 3,lg:0 }}
           container
-          spacing={{ xs: 2, md: 3 }}
-          columns={{ xs: 2, sm: 4, md:8, lg: 8 }}
+          className={classes.productsContainer}
         >
-          {featured.map((item) => (
-            <FeaturedProduct item={item}></FeaturedProduct>
+          {featured?.map((item, i) => (
+            <FeaturedProduct item={item} i={i} key={i} />
           ))}
         </Grid>
       </Box>
