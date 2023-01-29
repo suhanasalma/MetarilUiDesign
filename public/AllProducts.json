@@ -1,0 +1,193 @@
+[
+   {
+      "id":1,
+      "catId":1,
+      "title":"Defiant 1 men t-shirt",
+      "price":80,
+      "img":"",
+      "isFeatured":true
+
+   },
+   {
+      "id":17,
+      "catId":1,
+      "title":"Defiant 2 men t-shirt",
+      "price":80,
+      "img":"",
+      "isFeatured":true
+
+   },
+   {
+      "id":18,
+      "catId":1,
+      "title":"Defiant 3 men t-shirt",
+      "price":80,
+      "img":"",
+      "isFeatured":true
+
+   },
+   {
+      "id":19,
+      "catId":1,
+      "title":"Defiant 4 men t-shirt",
+      "price":80,
+      "img":"",
+      "isFeatured":true
+
+   },
+   {
+      "id":2,
+      "catId":1,
+      "title":"Men 1 t-shirt",
+      "price":80,
+      "img":"",
+      "isFeatured":false,
+      "specialOffer":true,
+      "oldPrice":100
+
+   },
+   {
+      "id":20,
+      "catId":1,
+      "title":"Men 2 t-shirt",
+      "price":80,
+      "img":"",
+      "isFeatured":false,
+      "specialOffer":true,
+      "oldPrice":100
+
+   },
+   {
+      "id":21,
+      "catId":1,
+      "title":"Men 3 t-shirt",
+      "price":80,
+      "img":"",
+      "isFeatured":false,
+      "specialOffer":true,
+      "oldPrice":100
+
+   },
+   {
+      "id":22,
+      "catId":1,
+      "title":"Men 4 t-shirt",
+      "price":80,
+      "img":"",
+      "isFeatured":false,
+      "specialOffer":true,
+      "oldPrice":100
+
+   },
+   {
+      "id":3,
+      "catId":2,
+      "title":"Women t-shirt",
+      "price":80,
+      "img":""
+
+   },
+   {
+      "id":4,
+      "catId":2,
+      "title":"Women t-shirt",
+      "price":80,
+      "img":""
+
+   },
+   {
+      "id":5,
+      "catId":3,
+      "title":"Kids shirt",
+      "price":80,
+      "img":""
+
+   },
+   {
+     "id": 6,
+     "catId": 3,
+     "title": "Kids shirt",
+     "price": 80,
+     "img": ""
+   },
+   {
+      "id":7,
+      "catId":4,
+      "title":"Sports Shirt",
+      "price":80,
+      "img":""
+
+   },
+   {
+      "id":8,
+      "catId":4,
+      "title":"Sports t-shirt",
+      "price":80,
+      "img":""
+
+   },
+   {
+      "id":9,
+      "catId":5,
+      "title":"Nick Shoe",
+      "price":80,
+      "img":""
+
+   },
+   {
+      "id":10,
+      "catId":5,
+      "title":"Adidias Shoe",
+      "price":80,
+      "img":""
+
+   },
+   {
+      "id":11,
+      "catId":6,
+      "title":"Cool Hat",
+      "price":80,
+      "img":""
+
+   },
+   {
+      "id":12,
+      "catId":6,
+      "title":"Warn Hat",
+      "price":80,
+      "img":""
+
+   },
+   {
+      "id":13,
+      "catId":7,
+      "title":"Rolex Watch",
+      "price":80,
+      "img":""
+
+   },
+   {
+      "id":14,
+      "catId":7,
+      "title":"Times Watch",
+      "price":80,
+      "img":""
+
+   },
+   {
+      "id":15,
+      "catId":8,
+      "title":"Denim Pants",
+      "price":80,
+      "img":""
+
+   },
+   {
+      "id":16,
+      "catId":8,
+      "title":"Armani Jeans",
+      "price":80,
+      "img":""
+
+   }
+]
