@@ -10,6 +10,8 @@ const Home = () => {
       <HomeSlider />
       <ShopByCategory />
       <FeaturedProducts />
+      <FeaturedProducts/>
+      <FeaturedProducts/>
     </Box>
   );
 };

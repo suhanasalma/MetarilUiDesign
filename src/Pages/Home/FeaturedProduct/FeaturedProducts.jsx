@@ -29,7 +29,10 @@ const FeaturedProducts = () => {
   const classes = useStyle();
 
   return (
-    <Container style={{ maxWidth: "1500px", marginTop: "100px" }}>
+    <Container
+      sx={{ }}
+      style={{ maxWidth: "1500px", marginTop: "100px" }}
+    >
       <Box>
         <Box sx={{ display: "flex", justifyContent: "space-between" }}>
           <CommonTitle title="Featured products"></CommonTitle>
@@ -39,7 +42,7 @@ const FeaturedProducts = () => {
         </Box>
 
         <Grid
-          spacing={{ xs: 4, md: 3,lg:0 }}
+          spacing={{ xs: 4, md: 3, lg: 0 }}
           container
           className={classes.productsContainer}
         >
