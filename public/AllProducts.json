@@ -111,20 +111,18 @@
      "img": ""
    },
    {
-      "id":7,
-      "catId":4,
-      "title":"Sports Shirt",
-      "price":80,
-      "img":""
-
+     "id": 7,
+     "catId": 4,
+     "title": "Sports Shirt",
+     "price": 80,
+     "img": ""
    },
    {
-      "id":8,
-      "catId":4,
-      "title":"Sports t-shirt",
-      "price":80,
-      "img":""
-
+     "id": 8,
+     "catId": 4,
+     "title": "Sports t-shirt",
+     "price": 80,
+     "img": ""
    },
    {
       "id":9,
