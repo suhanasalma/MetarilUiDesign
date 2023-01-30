@@ -28,15 +28,5 @@
       "id":6,
       "catName":"HAT",
       "image":"https://i.ibb.co/0cPpgJw/0e638368c6d3bd43502f907fae4de101-1.jpg"
-   },
-   {
-      "id":7,
-      "catName":"WATCH",
-      "image":"https://i.ibb.co/0cPpgJw/0e638368c6d3bd43502f907fae4de101-1.jpg"
-   },
-   {
-      "id":8,
-      "catName":"PANTS",
-      "image":"https://i.ibb.co/0cPpgJw/0e638368c6d3bd43502f907fae4de101-1.jpg"
    }
 ]

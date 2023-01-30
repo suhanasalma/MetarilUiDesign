@@ -3,15 +3,12 @@ import CommonTitle from '../../SharedPages/CommonTitle/CommonTitle';
 import { Box, Button, Container, Grid, Paper, useMediaQuery } from "@mui/material";
 import { useState } from 'react';
 import { useEffect } from 'react';
-import CategoryCard from './CategoryCard';
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
+// import CategoryCard from './CategoryCard';
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { fontWeight } from '@mui/system';
 // import Container from '@mui/material/Container';
 import useStyle from "./ShopByCategoryStyle";
+import CommonCategoryCards from '../../SharedPages/CommonCategoryCard/CommonCategoryCards';
 
 const ShopByCategory = () => {
    const [categories,setCategories] = useState([])
@@ -25,7 +22,7 @@ const ShopByCategory = () => {
  
       const classes = useStyle();
    return (
-     <Box className={classes.shopCategoryContainer} sx={{ }}>
+     <Box className={classes.shopCategoryContainer} sx={{}}>
        <Box
          sx={{
            display: "flex",
@@ -38,21 +35,9 @@ const ShopByCategory = () => {
            See All <ArrowForwardIcon sx={{ marginLeft: "5px" }} />
          </Button>
        </Box>
+       <CommonCategoryCards categories ={categories}/>
 
-       <Grid container className={classes.categoryContainer}>
-         {!isMobile &&
-           categories
-             ?.slice(0, 6)
-             .map((category, i) => (
-               <CategoryCard category={category} i={i} key={i} />
-             ))}
-         {isMobile &&
-           categories
-             ?.slice(0, 4)
-             .map((category, i) => (
-               <CategoryCard category={category} i={i} key={i} />
-             ))}
-       </Grid>
+       
      </Box>
    );
 };

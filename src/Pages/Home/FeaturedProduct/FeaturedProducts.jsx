@@ -50,7 +50,6 @@ const FeaturedProducts = () => {
       <Grid
         spacing={{ xs: 2, md: 3, lg: 2, xl: 3 }}
         container
-        wrap
         className={classes.productsContainer}
       >
         {featured?.slice(0, 4).map((item, i) => (

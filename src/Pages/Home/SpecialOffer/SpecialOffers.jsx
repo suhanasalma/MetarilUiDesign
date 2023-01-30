@@ -28,16 +28,22 @@ const SpecialOffers = () => {
   const classes = useStyle();
 
   return (
-    <Box className={classes.FeaturedContainer}>
+    <Box
+      className={classes.FeaturedContainer}
+      sx={{ boxShadow: "none", backgroundColor: "#383838", margin: "50px 0" }}
+    >
       <Box
         sx={{
           display: "flex",
           justifyContent: "space-between",
           marginBottom: "45px",
-          padding:"10px"
+          padding: "10px",
         }}
       >
-        <CommonTitle sx={{color:"white"}} title="Special Offers Just For You"></CommonTitle>
+        <CommonTitle
+          sx={{ color: "white" }}
+          title="Special Offers Just For You"
+        ></CommonTitle>
         <Button sx={{ color: "white", fontWeight: "bold" }}>
           See All <ArrowForwardIcon sx={{ marginLeft: "5px" }} />
         </Button>
@@ -46,7 +52,6 @@ const SpecialOffers = () => {
       <Grid
         spacing={{ xs: 2, md: 3, lg: 2, xl: 3 }}
         container
-        wrap
         className={classes.productsContainer}
       >
         {featured?.slice(0, 4).map((item, i) => (

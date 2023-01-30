@@ -91,14 +91,13 @@ const Sidebar = ({ setMobileOpen }) => {
         >
           <Box
             sx={{
-              
               display: "flex",
               alignItems: "center",
-              gap:"5px"
+              gap: "5px",
             }}
           >
             <Person2OutlinedIcon />
-           Jack
+            Jack
           </Box>
           <ArrowForwardIosIcon />
         </Box>
@@ -131,6 +130,7 @@ const Sidebar = ({ setMobileOpen }) => {
         <List>
           {profile.map((item, i) => (
             <Box
+              key={i}
               sx={{
                 display: "flex",
                 alignItems: "center",

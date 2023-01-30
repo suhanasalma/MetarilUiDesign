@@ -14,9 +14,9 @@ const Home = () => {
       <HomeSlider />
       <ShopByCategory />
       <FeaturedProducts />
-      <Paper sx={{ boxShadow: "none", backgroundColor: "#383838", margin:"50px 0",}}>
+ 
        <SpecialOffers/>
-      </Paper>
+   
 
       <FeaturedProducts />
     </Box>

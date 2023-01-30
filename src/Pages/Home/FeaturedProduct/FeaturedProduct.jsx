@@ -29,7 +29,7 @@ const FeaturedProduct = ({ item ,i}) => {
       md={4}
       lg={4}
       xl={3}
-      wrap
+
       justifyContent="center"
       alignItems="center"
       className={classes.movie}

@@ -53,8 +53,8 @@ const Footer = () => {
              For quiries and help
            </Typography>
            <br />
-           {contacts.map((contact) => (
-             <>
+           {contacts.map((contact,i) => (
+             <div key={i}>
                <Typography
                  sx={{ fontWeight: "", fontSize: "16px" }}
                  variant="p"
@@ -62,7 +62,7 @@ const Footer = () => {
                  {contact}
                </Typography>
                <br />
-             </>
+             </div>
            ))}
          </Paper>
          {!isMobile && (
@@ -77,8 +77,8 @@ const Footer = () => {
                Collections
              </Typography>
              <List sx={{ marginTop: "25px" }}>
-               {collections.map((item) => (
-                 <ListItem>
+               {collections.map((item,i) => (
+                 <ListItem key={i}>
                    <Typography
                      variant="p"
                      sx={{ fontWeight: "bold", fontSize: "13px" }}
@@ -99,8 +99,8 @@ const Footer = () => {
                Links
              </Typography>
              <List sx={{ marginTop: "25px" }}>
-               {collections.map((item) => (
-                 <ListItem>
+               {collections.map((item,i) => (
+                 <ListItem key={i}>
                    <Typography
                      variant="p"
                      sx={{ fontWeight: "bold", fontSize: "13px" }}
