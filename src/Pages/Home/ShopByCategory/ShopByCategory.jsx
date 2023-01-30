@@ -35,9 +35,7 @@ const ShopByCategory = () => {
            See All <ArrowForwardIcon sx={{ marginLeft: "5px" }} />
          </Button>
        </Box>
-       <CommonCategoryCards categories ={categories}/>
-
-       
+       <CommonCategoryCards links="/subCategory" categories={categories} />
      </Box>
    );
 };

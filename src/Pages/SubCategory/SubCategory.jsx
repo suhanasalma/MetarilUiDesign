@@ -21,10 +21,20 @@ const SubCategory = () => {
     <Box sx={{ backgroundColor: "#F7F7F7" }}>
       <Paper
         sx={{
+          boxShadow: "none",
+          alignItems: "center",
+          marginBottom:"60px",
+          backgroundColor: "inherit",
+        }}
+      >
+        <hr />
+      </Paper>
+      <Paper
+        sx={{
           display: "flex",
           boxShadow: "none",
           alignItems: "center",
-          margin: "40px 20px",
+          margin: "0px  60px",
           backgroundColor: "inherit",
         }}
       >
@@ -32,8 +42,11 @@ const SubCategory = () => {
         <KeyboardArrowRight />
         <Typography>Men</Typography>
       </Paper>
-      <Box sx={{ margin:` ${isMobile? "60px 20px": "60px "}`}}>
-        <CommonCategoryCards categories={categories} />
+      <Box sx={{ margin: ` ${isMobile ? "60px 20px" : "60px "}` }}>
+        <CommonCategoryCards
+          links="/productsUnderSubCat"
+          categories={categories}
+        />
       </Box>
       <FeaturedProducts />
       <SpecialOffers />
