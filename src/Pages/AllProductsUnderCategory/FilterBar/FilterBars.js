@@ -40,7 +40,7 @@ const FilterBars = () => {
       {
          name:"Large"
       }
-     
+
    ]
    const filterMeterials = [
       {
@@ -52,7 +52,7 @@ const FilterBars = () => {
       {
          name:"Fat Cotton"
       }
-     
+
    ]
    const filterPatterns = [
       {
@@ -67,7 +67,7 @@ const FilterBars = () => {
       {
          name:"Stripe"
       }
-     
+
    ]
    const filterPrices = [
      {
@@ -81,12 +81,12 @@ const FilterBars = () => {
      },
    ];
 
-   const [state, setState] = React.useState( 
+   const [state, setState] = React.useState(
    false
    );
 
-
    const handleChange = (event) => {
+      console.log(event.target.name);
       setState(true)
    //   setState({
    //     ...state,
@@ -132,3 +132,5 @@ const FilterBars = () => {
 };
 
 export default FilterBars;
+
+
