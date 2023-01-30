@@ -11,9 +11,9 @@ export default makeStyles((theme) => ({
     fontWeight: "bolder",
     background: "white",
     padding: "10px",
-    maxWidth:"160px",
-    height:"180px",
-    borderRadius:"5px",
+    maxWidth: "160px",
+    height: "180px",
+    borderRadius: "5px",
     [theme.breakpoints.up("xs")]: {
       display: "flex",
       flexDirection: "column",
@@ -26,11 +26,17 @@ export default makeStyles((theme) => ({
   image: {
     borderRadius: "10px",
     height: "110px",
-    padding:"10px",
+    width: "100%",
+    padding: "10px",
     marginBottom: "10px",
     transition: "ease-in-out .2s",
+    objectFit: "cover",
+    objectPosition: "top",
     "&:hover": {
       transform: "scale(1.05)",
+    },
+    [theme.breakpoints.down("sm")]: {
+      padding: "0px",
     },
   },
   title: {

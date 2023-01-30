@@ -22,28 +22,38 @@ const ShopByCategory = () => {
         .then((data) => setCategories(data));
    },[])
 
-   console.log(categories);
+ 
       const classes = useStyle();
    return (
-     <Container style={{ maxWidth: "1500px" }}>
-       <Box>
-         <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-           <CommonTitle title="Shop by category"></CommonTitle>
-           <Button sx={{ color: "black", fontWeight: "bold" }}>
-             See All <ArrowForwardIcon sx={{ marginLeft: "5px" }} />
-           </Button>
-         </Box>
-
-         <Grid container className={classes.categoryContainer}>
-           {!isMobile && categories?.slice(0, 6).map((category, i) => (
-             <CategoryCard category={category} i={i} key={i} />
-           ))}
-           {isMobile && categories?.slice(0, 4).map((category, i) => (
-             <CategoryCard category={category} i={i} key={i} />
-           ))}
-         </Grid>
+     <Box className={classes.shopCategoryContainer} sx={{ }}>
+       <Box
+         sx={{
+           display: "flex",
+           justifyContent: "space-between",
+           marginBottom: "45px",
+         }}
+       >
+         <CommonTitle title="Shop by category"></CommonTitle>
+         <Button sx={{ color: "black", fontWeight: "bold" }}>
+           See All <ArrowForwardIcon sx={{ marginLeft: "5px" }} />
+         </Button>
        </Box>
-     </Container>
+
+       <Grid container className={classes.categoryContainer}>
+         {!isMobile &&
+           categories
+             ?.slice(0, 6)
+             .map((category, i) => (
+               <CategoryCard category={category} i={i} key={i} />
+             ))}
+         {isMobile &&
+           categories
+             ?.slice(0, 4)
+             .map((category, i) => (
+               <CategoryCard category={category} i={i} key={i} />
+             ))}
+       </Grid>
+     </Box>
    );
 };
 

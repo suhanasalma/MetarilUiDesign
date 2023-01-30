@@ -5,10 +5,9 @@ export default makeStyles((theme) => ({
     padding: "10% 0",
     textDecoration: "none",
     color: "black",
+    
   },
-  image: {
-    width: "50%",
-  },
+
   links: {
     color: theme.palette.text.primary,
     textDecoration: "none",

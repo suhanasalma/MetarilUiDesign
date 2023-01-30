@@ -2,113 +2,88 @@ import React, { useState } from "react";
 import {
   AppBar,
   IconButton,
-  Avatar,
-  Button,
-  Tooltip,
+
   Toolbar,
   Drawer,
   useMediaQuery,
   Icon,
   Typography,
   Box,
+  CardMedia,
+  Paper,
+  InputBase,
 } from "@mui/material";
 import Badge from "@mui/material/Badge";
 import MenuItem from "@mui/material/MenuItem";
 import SearchIcon from '@mui/icons-material/Search';
-// import LocalMallIcon from "@mui/icons-material/LocalMall";
+
+
 import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
-import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
-import {
-  MenuIcon,
-  Menu,
- 
-  Brightness4,
-  Brightness7,
-} from "@mui/icons-material";
-import { Link } from "react-router-dom";
+
+import { Menu, } from "@mui/icons-material";
+import { Link, NavLink } from "react-router-dom";
 import { ClassNames } from "@emotion/react";
 import useStyles from "./Navstyles";
-import { useTheme } from "@mui/material/styles";
+
 import Sidebar from "./SideBar/Sidebar";
+import logo from '../../../Assests/Logo/logo.png'
+import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
+
 
 const Navbar = () => {
   const classes = useStyles();
-  const theme = useTheme();
   const [mobileOpen, setMobileOpen] = useState(false);
   const isMobile = useMediaQuery("(max-width:900px)");
-  const isAuthenticated = true;
+    const [open, setOpen] = useState(false);
+
 
   const navMenu = [
-   {link:"",name:'Home'},
-   {link:"",name:'Men'},
-   {link:"",name:'Women'},
-   {link:"",name:'Kids'}
+   {link:"/home",name:'Home'},
+   {link:"/men",name:'Men'},
+   {link:"/women",name:'Women'},
+   {link:"/clothes",name:'Kids'}
   ]
   return (
     <>
       <AppBar
+        className={classes.app}
         sx={{
           backgroundColor: "white",
           boxShadow: "none",
-          padding: "0 100px",
         }}
-        position="fixed"
+        position="static"
+        // position="fixed"
       >
         <Toolbar className={classes.toolbar}>
-          <Typography variant="h6" sx={{ color: "black" }}>
-            Defiant
-          </Typography>
+          <Box sx={{ display: "flex", alignItems: "center", gap: "20px" }}>
+            <img src={logo} alt="" />
+            <Typography
+              variant="h6"
+              sx={{ color: "black", fontWeight: "bolder", fontSize: "20px" }}
+            >
+              Defiant
+            </Typography>
+          </Box>
+
           <Box
             sx={{ display: "flex", gap: "10px", textTransform: "uppercase" }}
           >
             {!isMobile &&
               navMenu.map((menu, i) => (
-                <Link to="/" className={classes.linkButton} key={i}>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? `${classes.activeLink}` : `${classes.linkButton}`
+                  }
+                  to={menu.link}
+                  key={i}
+                >
                   {menu.name}
-                </Link>
+                </NavLink>
               ))}
           </Box>
 
-          {!isMobile && (
-            <Box
-              color="black"
-              // component={Link}
-              // to="/profile/:id"
-              className={classes.linkButton}
-              // onClick={() => {}}
-            >
-              <IconButton
-                size="large"
-                aria-label="show 4 new mails"
-                color="inherit"
-              >
-                <SearchIcon />
-              </IconButton>
-              <IconButton
-                size="large"
-                aria-label="show 17 new notifications"
-                color="inherit"
-              >
-                <Badge badgeContent={1} color="error">
-                  <LocalMallOutlinedIcon />
-                </Badge>
-              </IconButton>
-              <IconButton
-                sx={{ marginRight: "5px" }}
-                size="large"
-                edge="end"
-                aria-label="account of current user"
-                aria-haspopup="true"
-                color="inherit"
-              >
-                <AccountCircleOutlinedIcon />
-              </IconButton>
-              {!isMobile && <>Hi Jack &nbsp;</>}
-            </Box>
-          )}
-
-          {isMobile && (
-            <>
+          {isMobile ? (
+            <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
               <IconButton
                 size="large"
                 aria-label="show 1 new notifications"
@@ -124,13 +99,97 @@ const Navbar = () => {
                 onClick={() =>
                   setMobileOpen((prevMobileOpen) => !prevMobileOpen)
                 }
-                className={classes.menuButton}
+                // className={classes.menuButton}
               >
                 <Menu />
               </IconButton>
-            </>
+            </Box>
+          ) : (
+            <Box
+              sx={{
+                // border: "1px solid",
+                display: "flex",
+                alignItems: "center",
+                gap: "10px",
+              }}
+              color="black"
+            >
+              {/* <input type="text" /> */}
+              <Paper
+                sx={{
+                  // border: "1px solid",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "10px",
+                  boxShadow: "none",
+                  backgroundColor: `${open && "#EBEBEB"}`,
+                  color: "black",
+                }}
+              >
+                <IconButton
+                  onClick={() => setOpen(!open)}
+                  size="large"
+                  color="inherit"
+                >
+                  <SearchIcon />
+                </IconButton>
+                <InputBase
+                  sx={{ ml: 1, display: `${open ? "inline" : "none"}` }}
+                  placeholder="Search"
+                  inputProps={{ "aria-label": "Search" }}
+                />
+              </Paper>
+
+              <IconButton
+                size="large"
+                aria-label="show 1 new notifications"
+                color="inherit"
+              >
+                <Badge badgeContent={1} color="error">
+                  <LocalMallOutlinedIcon />
+                </Badge>
+              </IconButton>
+              <IconButton
+                sx={{ marginRight: "5px" }}
+                size="large"
+                edge="end"
+                aria-label="account of current user"
+                aria-haspopup="true"
+                color="inherit"
+              >
+                <Person2OutlinedIcon />
+              </IconButton>
+              {!isMobile && <>Hi Jack &nbsp;</>}
+            </Box>
           )}
         </Toolbar>
+       {isMobile&& <Paper
+          sx={{
+            // border: "1px solid",
+            display: "flex",
+            alignItems: "center",
+            gap: "10px",
+            boxShadow: "none",
+            backgroundColor:" #EBEBEB",
+            color: "black",
+            width: "90%",
+            margin: "50px auto",
+            borderRadius:""
+          }}
+        >
+          <IconButton
+           
+            size="large"
+            color="inherit"
+          >
+            <SearchIcon />
+          </IconButton>
+          <InputBase
+            sx={{ ml: 1 }}
+            placeholder="Search"
+            inputProps={{ "aria-label": "Search" }}
+          />
+        </Paper>}
       </AppBar>
       <div>
         <nav className={classes.drawer}>

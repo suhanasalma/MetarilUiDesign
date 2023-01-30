@@ -3,7 +3,7 @@ import { padding } from "@mui/system";
 
 export default makeStyles((theme) => ({
   movie: {
-    //  padding: "10px",
+    padding: "10px",
   },
   link: {
     //  alignItems: "center",
@@ -12,26 +12,38 @@ export default makeStyles((theme) => ({
     backgroundColor: "white",
 
     borderRadius: "5px",
+    maxWidth: "244px",
+    maxHeight: "420px",
+    margin:"auto",
 
-    [theme.breakpoints.up("xs")]: {
-      display: "flex",
-      flexDirection: "column",
-    },
     [theme.breakpoints.down("md")]: {
-      maxWidth: "250px",
+      maxWidth: "290px",
+      padding: "5px",
+      
+    },
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: "100%",
+      padding: "5px",
+      
     },
     "&:hover": {
       cursor: "pointer",
     },
   },
 
+
   image: {
-    borderRadius: "20px",
-    height: "300px",
+    borderRadius: "5px",
+    height: "280px",
+    width: "100%",
+
     marginBottom: "10px",
-    padding: "10px",
-    objectFit: "contain",
+    padding: "0px",
+    // objectFit: "scale-down",
+    objectFit: "cover",
+    objectPosition: " top",
   },
+
   title: {
     color: theme.palette.text.primary,
     textOverflow: "ellipsis",

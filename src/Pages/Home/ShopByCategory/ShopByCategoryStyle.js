@@ -5,9 +5,16 @@ export default makeStyles((theme) => ({
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "space-between",
-    overflow: "auto",
+    overflow: "hidden",
+
     [theme.breakpoints.down("sm")]: {
       justifyContent: "center",
+    },
+  },
+  shopCategoryContainer: {
+    padding: "80px",
+    [theme.breakpoints.down("md")]: {
+      padding: "0 30px 30px 30px",
     },
   },
 }));

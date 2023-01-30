@@ -1,5 +1,5 @@
 
-import { Box } from '@mui/material';
+import { Box, Container } from '@mui/material';
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Footer from '../Pages/SharedPages/Footer/Footer';
@@ -9,12 +9,12 @@ import Navbar from '../Pages/SharedPages/Navbar/Navbar';
 
 const Main = () => {
    return (
-     <Box >
+     <Container style={{maxWidth:"1200px"}}>
        {/* <Header /> */}
        <Navbar/>
        <Outlet />
        <Footer />
-     </Box>
+     </Container>
    );
 };
 

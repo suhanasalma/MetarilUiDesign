@@ -25,33 +25,39 @@ const FeaturedProducts = () => {
       });
   }, []);
 
-  console.log(featured);
+ 
   const classes = useStyle();
 
   return (
-    <Container
-      sx={{ }}
-      style={{ maxWidth: "1500px", marginTop: "100px" }}
+    <Box
+      className={classes.FeaturedContainer}
+      
     >
-      <Box>
-        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-          <CommonTitle title="Featured products"></CommonTitle>
-          <Button sx={{ color: "black", fontWeight: "bold" }}>
-            See All <ArrowForwardIcon sx={{ marginLeft: "5px" }} />
-          </Button>
-        </Box>
-
-        <Grid
-          spacing={{ xs: 4, md: 3, lg: 0 }}
-          container
-          className={classes.productsContainer}
-        >
-          {featured?.map((item, i) => (
-            <FeaturedProduct item={item} i={i} key={i} />
-          ))}
-        </Grid>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          marginBottom: "45px",
+          
+        }}
+      >
+        <CommonTitle title="Featured products"></CommonTitle>
+        <Button sx={{ color: "black", fontWeight: "bold" }}>
+          See All <ArrowForwardIcon sx={{ marginLeft: "5px" }} />
+        </Button>
       </Box>
-    </Container>
+
+      <Grid
+        spacing={{ xs: 2, md: 3, lg: 2, xl: 3 }}
+        container
+        wrap
+        className={classes.productsContainer}
+      >
+        {featured?.slice(0, 4).map((item, i) => (
+          <FeaturedProduct item={item} i={i} key={i} />
+        ))}
+      </Grid>
+    </Box>
   );
 };
 

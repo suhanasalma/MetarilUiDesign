@@ -1,13 +1,32 @@
 import { makeStyles } from "@mui/styles";
 
 export default makeStyles((theme) => ({
-  featuredCardContainer: {
-    marginBotom: "20px",
-    display: "flex",
-    justifyContent: "center",
+  SliderContainer: {
+    // marginBotom: "20px",
+    // display: "flex",
+    // justifyContent: "center",
     height: "500px",
     textDecoration: "none",
+    overflow: "hidden",
     marginBottom: "25px",
+    [theme.breakpoints.down("md")]: {
+      height: "250px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      height: "130px",
+    },
+  },
+  textYear: {
+    fontSize: "15px",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "10px",
+    },
+  },
+  textSale: {
+    fontSize: "56px",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "30px",
+    },
   },
   card: {
     width: "100%",
@@ -17,18 +36,7 @@ export default makeStyles((theme) => ({
     alignItems: "center",
     // flexDirection: "column",
   },
-  cardRoot: {
-    position: "relative",
-  },
-  cardMedia: {
-    position: "absolute",
-    top: 0,
-    right: 0,
-    height: "100%",
-    width: "100%",
-    backgroundColor: "rgba(0, 0, 0, 0.175)",
-    backgroundBlendMode: "darken",
-  },
+
   cardContent: {
     color: "#ffffff",
     width: "100%",
@@ -40,5 +48,21 @@ export default makeStyles((theme) => ({
   cardContentRoot: {
     position: "relative",
     backgroundColor: "transparent",
+  },
+
+  img: {
+    marginTop: "130px",
+    overflow: "hidden",
+    width: "80%",
+    objectFit: "cover",
+    objectPosition: " center",
+    [theme.breakpoints.down("md")]: {
+      width: "100%",
+    
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "50px",
+      width: "100%",
+    },
   },
 }));

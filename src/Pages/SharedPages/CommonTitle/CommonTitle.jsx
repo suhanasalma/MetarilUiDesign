@@ -6,7 +6,7 @@ const CommonTitle = ({ title, sx }) => {
     <div>
       <Typography
         style={{
-          fontSize: "32px",
+          fontSize: "20px",
           fontWeight: "bold",
           // textAlign: "center",
           marginBottom: "10px",

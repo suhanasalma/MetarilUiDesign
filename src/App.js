@@ -7,10 +7,10 @@ import { Box, Container, CssBaseline } from "@mui/material";
 
 function App() {
   return (
-    <Container style={{ maxWidth: "1750px" }}>
+    <Box sx={{ backgroundColor: "#EBEBBE" }}>
       <CssBaseline></CssBaseline>
       <RouterProvider router={router}></RouterProvider>
-    </Container>
+    </Box>
   );
 }
 

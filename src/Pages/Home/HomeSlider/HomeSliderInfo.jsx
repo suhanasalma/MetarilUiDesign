@@ -13,7 +13,7 @@ const data = [
   },
   {
     title: "year end sale",
-    secondTitle: "Sale 30% Off all items",
+    secondTitle: "Sale 30%",
     thirdTitle: "Off all items",
     img: "https://www.shutterstock.com/image-illustration/3d-paper-bags-on-ping-260nw-1999507778.jpg",
   },

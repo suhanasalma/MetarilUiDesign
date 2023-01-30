@@ -1,6 +1,13 @@
 import React from "react";
-import image from "../../../Assests/1.jpg"
-import { Box, Typography, Card, CardContent, CardMedia } from "@mui/material";
+import image from "../../../Assests/sliderImage/1.png";
+import {
+  Box,
+  Typography,
+  Card,
+  CardContent,
+  CardMedia,
+  useMediaQuery,
+} from "@mui/material";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import useStyles from "./HomeSliderStyle";
@@ -20,52 +27,76 @@ console.log(data);
 
 const HomeSlider = () => {
   const classes = useStyles();
+  const isMobile = useMediaQuery("(max-width:600px)");
   return (
-    <Swiper
-      slidesPerView={1}
-      spaceBetween={30}
-      modules={[Pagination, Navigation]}
-      navigation={true}
-      pagination={true}
-      loop={true}
-      className="mySwiper"
-    >
-      {data.map((item, i) => (
-        <SwiperSlide key={i}>
-          <Box className={classes.featuredCardContainer}>
-            <Card className={classes.card} classes={{ root: classes.cardRoot }}>
-              <CardMedia
-                media="picture"
-                image={item.img}
-                title="Hello"
-                className={classes.cardMedia}
-              />
-              <Box padding="20px">
-                <CardContent
-                  className={classes.cardContent}
-                  classes={{ root: classes.cardContentRoot }}
+    <section>
+      <Swiper
+        slidesPerView={1}
+        spaceBetween={30}
+        modules={[Pagination, Navigation]}
+        navigation={true}
+        pagination={true}
+        loop={true}
+        className="mySwiper"
+      >
+        {data.map((item, i) => (
+          <SwiperSlide key={i}>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: `${
+                  isMobile ? "space-between" : "space-around"
+                }`,
+                backgroundColor: "#EBEBEB",
+                padding: `${isMobile ? "40px" : "10px"}`,
+              }}
+              className={classes.SliderContainer}
+            >
+              <Box>
+                <Typography
+                  className={classes.textYear}
+                  variant="p"
+                  sx={{
+                    color: "black",
+                    textTransform: "uppercase",
+                    width: "50%",
+                  }}
+                  gutterBottom
                 >
-                  <Typography
-                    variant="p"
-                    sx={{ color: "black", textTransform: "uppercase" }}
-                    gutterBottom
-                  >
-                    {item.title}
-                    <br />
-                    <Box sx={{ fontSize: "56px", fontWeight: "bold" }}>
-                      {item.secondTitle}
-                    </Box>
-                    <Box sx={{ fontSize: "56px", fontWeight: "bold" }}>
-                      {item.thirdTitle}
-                    </Box>
-                  </Typography>
-                </CardContent>
+                  {item.title}
+                </Typography>
+                <br />
+                <Typography
+                  className={classes.textSale}
+                  variant="p"
+                  sx={{
+                    // fontSize: `${isMobile ? "20px" : "56px"}`,
+                    fontWeight: "bold",
+                  }}
+                >
+                  {item.secondTitle}
+                </Typography>
+                <br />
+                <Typography
+                  className={classes.textSale}
+                  variant="p"
+                  sx={{
+                    // fontSize: `${isMobile ? "20px" : "56px"}`,
+                    fontWeight: "bold",
+                  }}
+                >
+                  {item.thirdTitle}
+                </Typography>
               </Box>
-            </Card>
-          </Box>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+              <Box sx={{ width: "50%" }}>
+                <img className={classes.img} src={image} alt="" />
+              </Box>
+            </Box>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </section>
   );
 };
 
