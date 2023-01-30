@@ -7,7 +7,7 @@ import { Box, Container, CssBaseline } from "@mui/material";
 
 function App() {
   return (
-    <Box sx={{ backgroundColor: "#EBEBBE" }}>
+    <Box sx={{ }}>
       <CssBaseline></CssBaseline>
       <RouterProvider router={router}></RouterProvider>
     </Box>
