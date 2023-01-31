@@ -104,7 +104,7 @@ const Sidebar = ({ setMobileOpen }) => {
       )}
       <List>
         {categories.map((category, i) => (
-          <Box
+          <Box key={i}
             sx={{
               display: "flex",
               alignItems: "center",

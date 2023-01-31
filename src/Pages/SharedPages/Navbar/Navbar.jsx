@@ -99,7 +99,7 @@ const Navbar = () => {
                 onClick={() =>
                   setMobileOpen((prevMobileOpen) => !prevMobileOpen)
                 }
-                // className={classes.menuButton}
+                // className={[classes.menuButton, classes.btn]}
               >
                 <Menu />
               </IconButton>
@@ -192,7 +192,7 @@ const Navbar = () => {
         </Paper>}
       </AppBar>
       <div>
-        <nav className={classes.drawer}>
+        <nav className={[classes.drawer]}>
           {isMobile && (
             <Drawer
               variant="temporary"
