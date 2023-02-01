@@ -94,7 +94,7 @@ const ProductDetails = () => {
                 height: '30px',
                 borderRadius: '5px',
               }}
-              key={i}
+       
             ></Box>
           ))}
         </Box>

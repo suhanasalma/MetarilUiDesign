@@ -41,7 +41,8 @@ const Navbar = () => {
    {link:"/home",name:'Home'},
    {link:"/men",name:'Men'},
    {link:"/women",name:'Women'},
-   {link:"/clothes",name:'Kids'}
+   {link:"/clothes",name:'Kids'},
+   {link:"/carts",name:'My Cart'},
   ]
   return (
     <>

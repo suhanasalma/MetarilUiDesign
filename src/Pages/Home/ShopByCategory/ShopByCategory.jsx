@@ -9,15 +9,21 @@ import { fontWeight } from '@mui/system';
 // import Container from '@mui/material/Container';
 import useStyle from "./ShopByCategoryStyle";
 import CommonCategoryCards from '../../SharedPages/CommonCategoryCard/CommonCategoryCards';
+import { useSelector } from 'react-redux';
+import { useGetProductsCategoryQuery } from '../../../Redux/ProductApi/productsApiSlice';
 
 const ShopByCategory = () => {
-   const [categories,setCategories] = useState([])
-    const isMobile = useMediaQuery("(max-width:900px)");
-   useEffect(()=>{
-      fetch("category.json")
-        .then((res) => res.json())
-        .then((data) => setCategories(data));
-   },[])
+  //  const [categories,setCategories] = useState([])
+  //   const isMobile = useMediaQuery("(max-width:900px)");
+  //  useEffect(()=>{
+  //     fetch("category.json")
+  //       .then((res) => res.json())
+  //       .then((data) => setCategories(data));
+  //  },[])
+
+   const Allcategories = useGetProductsCategoryQuery()
+   let categories = Allcategories?.data?.category.slice(0,4);
+   console.log(categories);
 
  
       const classes = useStyle();
@@ -35,7 +41,7 @@ const ShopByCategory = () => {
            See All <ArrowForwardIcon sx={{ marginLeft: "5px" }} />
          </Button>
        </Box>
-       <CommonCategoryCards links="/subCategory" categories={categories} />
+       <CommonCategoryCards categories={categories} />
      </Box>
    );
 };

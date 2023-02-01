@@ -23,7 +23,7 @@ import "./HomeSlider.css";
 import { Navigation, Pagination } from "swiper";
 import data from "./HomeSliderInfo";
 
-console.log(data);
+
 
 const HomeSlider = () => {
   const classes = useStyles();

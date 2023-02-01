@@ -11,6 +11,8 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import { Link } from 'react-router-dom';
 import useStyle from "./SpecialOfferStyle";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../../Redux/CartInfo/cartActions';
 
 
 const SpecialOffer = ({ item ,i}) => {
@@ -19,7 +21,15 @@ const SpecialOffer = ({ item ,i}) => {
 
     const smallIcon = useMediaQuery("(max-width:500px)");
 
-   const { title, img, price, oldPrice } = item;
+   const { name, img, price, oldPrice, quantity } = item;
+   const dispatch = useDispatch()
+
+   const handleAddToCart = (product)=>{
+    dispatch(addToCart(product));
+    
+   }
+
+   console.log(quantity);
   
   return (
     <Grid
@@ -52,9 +62,9 @@ const SpecialOffer = ({ item ,i}) => {
           >
             <FavoriteIcon sx={{}} />
           </IconButton>
-          <img alt={title} className={classes.image} src={image3} />
+          <img alt={name} className={classes.image} src={image3} />
           <Typography className={classes.title} variant="p">
-            {title}
+            {name}
           </Typography>
           <Paper
             sx={{
@@ -110,6 +120,7 @@ const SpecialOffer = ({ item ,i}) => {
               sx={{ fontSize: `${smallIcon ? "10px" : "20px"}` }}
             />
             <Button
+              onClick={() => handleAddToCart(item)}
               variant="outlined"
               sx={{
                 fontSize: `${smallIcon ? "10px" : "12px"}`,
