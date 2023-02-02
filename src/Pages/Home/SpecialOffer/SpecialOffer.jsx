@@ -21,7 +21,8 @@ const SpecialOffer = ({ item ,i}) => {
 
     const smallIcon = useMediaQuery("(max-width:500px)");
 
-   const { name, img, price, oldPrice, quantity } = item;
+   const { name, single_image
+    , price, oldPrice, quantity } = item;
    const dispatch = useDispatch()
 
    const handleAddToCart = (product)=>{
@@ -29,7 +30,7 @@ const SpecialOffer = ({ item ,i}) => {
     
    }
 
-   console.log(quantity);
+
   
   return (
     <Grid
@@ -62,7 +63,8 @@ const SpecialOffer = ({ item ,i}) => {
           >
             <FavoriteIcon sx={{}} />
           </IconButton>
-          <img alt={name} className={classes.image} src={image3} />
+          <img alt={name} className={classes.image} src={single_image
+} />
           <Typography className={classes.title} variant="p">
             {name}
           </Typography>

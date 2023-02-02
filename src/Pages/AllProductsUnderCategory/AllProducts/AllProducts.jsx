@@ -12,7 +12,6 @@ import SpecialOffer from '../../Home/SpecialOffer/SpecialOffer';
 const AllProducts = () => {
 
  const id =  useParams()
- console.log(id);
    const allProducts = useGetProductsByCategoryQuery(id.id);
    let products = allProducts?.data?.best_products.data;
 

@@ -16,6 +16,7 @@ const CommonCategoryCard = ({ category, i }) => {
   const { name, image, id } = category;
   const classes = useStyle();
   let link = `/productsUnderSubCat/${id}`;
+  console.log(category);
 
   return (
     <Grid
