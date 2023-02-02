@@ -12,7 +12,25 @@ import {
 
 } from "@mui/material";
 import { Box } from "@mui/system";
-const MyCart = () => {
+import { useDispatch } from 'react-redux';
+import { addToCart, decreaseFromCart, increaseFromCart, removeItem } from '../../../Redux/CartInfo/cartActions';
+const MyCart = ({item}) => {
+  const dispatch = useDispatch()
+
+  const handleONClick = (item)=>{
+    console.log(item);
+    dispatch(removeItem(item))
+  }
+
+  const handleIncrease = (item)=>{
+    console.log(item);
+    dispatch(addToCart(item))
+  }
+  const handleDecrease = (item)=>{
+    console.log(item);
+    dispatch(decreaseFromCart(item))
+  }
+
   return (
     <Paper
       sx={{
@@ -22,11 +40,12 @@ const MyCart = () => {
       }}
     >
       <FormControlLabel
+      onClick={()=>handleONClick(item)}
         control={<Checkbox />}
         // label="Disabled"
       />
-      <img src="" alt="Image" />
-      <Typography variant="p">Mobile Name</Typography>
+      <img src={item?.single_image} style={{width:"50px"}} alt="Image" />
+      <Typography variant="p">{item?.name}</Typography>
 
       <Box
         sx={{
@@ -48,7 +67,7 @@ const MyCart = () => {
           },
         }}
       >
-        <AddIcon sx={{ width: "15px", fontWeight: "bold" }} />
+        <AddIcon onClick={()=>handleIncrease(item)} sx={{ width: "15px", fontWeight: "bold" }} />
         <Divider
           style={{ background: "purple" }}
           orientation="vertical"
@@ -56,7 +75,7 @@ const MyCart = () => {
           flexItem
         />
         <Typography variant="div" sx={{ width: "20px", textAlign: "center" }}>
-          1
+          {item?.quantity}
         </Typography>
         <Divider
           style={{ background: "purple" }}
@@ -64,9 +83,10 @@ const MyCart = () => {
           variant="middle"
           flexItem
         />
-        <RemoveIcon sx={{ width: "15px", fontWeight: "bold" }} />
+        <RemoveIcon onClick={()=>handleDecrease(item)}
+         sx={{ width: "15px", fontWeight: "bold" }} />
       </Box>
-      <Typography variant="p">Mobile Price</Typography>
+      <Typography variant="p">{item?.price}</Typography>
     </Paper>
   );
 };

@@ -1,6 +1,9 @@
 import { Checkbox, FormControlLabel, FormGroup, Paper, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import CartSideBar from '../CartSideBar/CartSideBar';
 import MyCart from './MyCart';
 // import AddIcon from "@mui/icons-material/Add";
@@ -11,9 +14,17 @@ import MyCart from './MyCart';
 
 
 const MyCarts = () => {
-  const handleONClick = ()=>{
-    console.log('clicked');
-  }
+  // const [carts,setCarts] = useState('')
+
+
+  const cartItems = useSelector(state=>state.CartItems)
+
+  
+  console.log(cartItems);
+
+  
+  
+ 
   return (
     <div>
       <Paper
@@ -57,7 +68,13 @@ const MyCarts = () => {
           justifyContent: "space-between",
         }}
       >
-        <MyCart />
+        <Box sx={{width:"70%"}}>
+        { cartItems.length? 
+          cartItems?.map((item,i)=> <MyCart item={item} key={i}/>):"Carts empty"
+        }
+
+        </Box>
+       
         <CartSideBar/>
       </Box>
     </div>

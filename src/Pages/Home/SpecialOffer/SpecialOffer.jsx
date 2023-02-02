@@ -1,37 +1,50 @@
-
-
-import React from 'react';
+import React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Box, Button, Grid, Grow, IconButton, Paper, Tooltip, useMediaQuery } from "@mui/material";
-import image3 from '../../../Assests/3.jpg'
+import {
+  Box,
+  Button,
+  Grid,
+  Grow,
+  IconButton,
+  Paper,
+  Tooltip,
+  useMediaQuery,
+} from "@mui/material";
+import image3 from "../../../Assests/3.jpg";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import useStyle from "./SpecialOfferStyle";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { useDispatch } from 'react-redux';
-import { addToCart } from '../../../Redux/CartInfo/cartActions';
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../../Redux/CartInfo/cartActions";
+import { useState } from "react";
+import { useEffect } from "react";
 
+const SpecialOffer = ({ item, i }) => {
+  const classes = useStyle();
+  const isMobile = useMediaQuery("(max-width:900px)");
 
-const SpecialOffer = ({ item ,i}) => {
-    const classes = useStyle();
-    const isMobile = useMediaQuery("(max-width:900px)");
+  const smallIcon = useMediaQuery("(max-width:500px)");
+  const [cart, setCart] = useState([]);
 
-    const smallIcon = useMediaQuery("(max-width:500px)");
+  const { name, single_image, price, oldPrice, quantity ,seo} = item;
+  const dispatch = useDispatch();
 
-   const { name, single_image
-    , price, oldPrice, quantity } = item;
-   const dispatch = useDispatch()
-
-   const handleAddToCart = (product)=>{
+  const handleAddToCart = (product) => {
     dispatch(addToCart(product));
+   
+
     
-   }
+  };
+console.log(item);
 
 
   
+
+
   return (
     <Grid
       item
@@ -63,8 +76,8 @@ const SpecialOffer = ({ item ,i}) => {
           >
             <FavoriteIcon sx={{}} />
           </IconButton>
-          <img alt={name} className={classes.image} src={single_image
-} />
+         <Link to={`/productdetails/${seo}`}>
+         <img alt={name} className={classes.image} src={single_image} /></Link>
           <Typography className={classes.title} variant="p">
             {name}
           </Typography>
@@ -100,7 +113,7 @@ const SpecialOffer = ({ item ,i}) => {
               ${oldPrice}.00
             </Typography>
           </Paper>
-          <Paper
+          <Paper onClick={() => handleAddToCart(item)}
             sx={{
               display: "flex",
               alignItems: "center",
@@ -122,7 +135,7 @@ const SpecialOffer = ({ item ,i}) => {
               sx={{ fontSize: `${smallIcon ? "10px" : "20px"}` }}
             />
             <Button
-              onClick={() => handleAddToCart(item)}
+              
               variant="outlined"
               sx={{
                 fontSize: `${smallIcon ? "10px" : "12px"}`,

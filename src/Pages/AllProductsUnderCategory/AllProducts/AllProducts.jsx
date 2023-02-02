@@ -15,8 +15,10 @@ const AllProducts = () => {
    const allProducts = useGetProductsByCategoryQuery(id.id);
    let products = allProducts?.data?.best_products.data;
 
- const cartItem = useSelector((state) => state.CartItems);
- console.log(cartItem);
+   
+  // const cartItems = useSelector(state=>state.CartItems)
+  // console.log(cartItems);
+
 
 
 
@@ -29,6 +31,7 @@ const AllProducts = () => {
        }}
      >
        {products?.map((item,i) => (
+        
          <SpecialOffer i={i} key={item.id} item={item} />
        ))}
      </Box>

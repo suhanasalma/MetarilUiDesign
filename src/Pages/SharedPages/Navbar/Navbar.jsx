@@ -28,6 +28,8 @@ import useStyles from "./Navstyles";
 import Sidebar from "./SideBar/Sidebar";
 import logo from '../../../Assests/Logo/logo.png'
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 
 const Navbar = () => {
@@ -35,7 +37,20 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const isMobile = useMediaQuery("(max-width:900px)");
     const [open, setOpen] = useState(false);
+    const [items,setItems] = useState([])
 
+    // useEffect(()=>{
+    //   const cartItem = localStorage.getItem('mycart');
+    //   setItems(JSON.parse(cartItem))
+    // },[])
+
+    // console.log(items)
+
+    const cartItems = useSelector(state=>state.CartItems)
+    let totalQuantity = 0
+    for (let product of cartItems) {
+      totalQuantity += product.quantity;
+    }
 
   const navMenu = [
    {link:"/home",name:'Home'},
@@ -75,10 +90,10 @@ const Navbar = () => {
                   className={({ isActive }) =>
                     isActive ? `${classes.activeLink}` : `${classes.linkButton}`
                   }
-                  to={menu.link}
+                  to={menu?.link}
                   key={i}
                 >
-                  {menu.name}
+                  {menu?.name}
                 </NavLink>
               ))}
           </Box>
@@ -90,9 +105,10 @@ const Navbar = () => {
                 aria-label="show 1 new notifications"
                 color="black"
               >
-                <Badge badgeContent={1} color="error">
+              <Link to='/carts'>
+              <Badge badgeContent={totalQuantity} color="error">
                   <LocalMallOutlinedIcon />
-                </Badge>
+                </Badge></Link>
               </IconButton>
               <IconButton
                 edge="start"
@@ -146,9 +162,10 @@ const Navbar = () => {
                 aria-label="show 1 new notifications"
                 color="inherit"
               >
-                <Badge badgeContent={1} color="error">
+               <Link to='/carts'>
+              <Badge badgeContent={totalQuantity} color="error">
                   <LocalMallOutlinedIcon />
-                </Badge>
+                </Badge></Link>
               </IconButton>
               <IconButton
                 sx={{ marginRight: "5px" }}
