@@ -12,10 +12,11 @@ import { Grow, Tooltip, Rating } from "@mui/material";
 import useStyle from "./CommonCategoryCardStyles";
 import { Link } from 'react-router-dom';
 
-const CommonCategoryCard = ({ category, i, links }) => {
-  const { catName, image, id } = category;
+const CommonCategoryCard = ({ category, i }) => {
+  const { name, image, id } = category;
   const classes = useStyle();
-  console.log(links);
+  let link = `/productsUnderSubCat/${id}`;
+
   return (
     <Grid
       // justifyContent="center"
@@ -29,15 +30,15 @@ const CommonCategoryCard = ({ category, i, links }) => {
       className={classes.movie}
     >
       <Grow timeout={(i + 1) * 250} in key={i}>
-        <Link to={links}>
+        <Link to={link}>
           <div className={classes.link}>
-            <img alt={catName} className={classes.image} src={image2} />
+            <img alt={name} className={classes.image} src={image} />
             <Typography
               sx={{ fontSize: "15px" }}
               className={classes.title}
               variant="p"
             >
-              {catName}
+              {name}
             </Typography>
           </div>
         </Link>

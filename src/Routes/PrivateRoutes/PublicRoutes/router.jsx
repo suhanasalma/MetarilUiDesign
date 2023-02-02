@@ -27,7 +27,7 @@ export const router = createBrowserRouter([
         element: <SubCategory />,
       },
       {
-        path: "/productsUnderSubCat",
+        path: "/productsUnderSubCat/:id",
         element: <AllProducts />,
       },
       {
@@ -36,7 +36,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/carts",
-        element: <MyCarts/>,
+        element: <MyCarts />,
       },
     ],
   },
