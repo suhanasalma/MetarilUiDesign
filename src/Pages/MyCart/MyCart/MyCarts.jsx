@@ -1,26 +1,29 @@
-import { Checkbox, FormControlLabel, FormGroup, Paper, Typography } from '@mui/material';
+import { Paper, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
+
 import { useSelector } from 'react-redux';
 import CartSideBar from '../CartSideBar/CartSideBar';
 import MyCart from './MyCart';
-// import AddIcon from "@mui/icons-material/Add";
-// import RemoveIcon from "@mui/icons-material/Remove";
-// import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-// import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-// import Divider from "@mui/material/Divider";
+
 
 
 const MyCarts = () => {
-  // const [carts,setCarts] = useState('')
+
 
 
   const cartItems = useSelector(state=>state.CartItems)
 
-  
-  console.log(cartItems);
+
+
+  let totalQuantity = 0
+if(cartItems){
+  for (let product of cartItems) {
+   
+    totalQuantity += product.quantity;
+  }
+}
+
 
   
   
@@ -48,7 +51,7 @@ const MyCarts = () => {
         }}
       >
         <Typography variant="p">My Cart</Typography>
-        <Typography variant="p">3 Items</Typography>
+        <Typography variant="p">{totalQuantity} Items</Typography>
       </Paper>
 
       <Paper

@@ -1,49 +1,42 @@
+
+
+
+
 import React from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
+
 import Typography from "@mui/material/Typography";
 import {
-  Box,
+
   Button,
   Grid,
   Grow,
   IconButton,
   Paper,
-  Tooltip,
+
   useMediaQuery,
 } from "@mui/material";
-import image3 from "../../../Assests/3.jpg";
+
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { Link } from "react-router-dom";
-import useStyle from "./SpecialOfferStyle";
+import useStyle from "./CommonProdctCardStyle";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../../Redux/CartInfo/cartActions";
-import { useState } from "react";
-import { useEffect } from "react";
 
-const SpecialOffer = ({ item, i }) => {
+
+const CommonProdctCard = ({ item, i }) => {
   const classes = useStyle();
   const isMobile = useMediaQuery("(max-width:900px)");
 
   const smallIcon = useMediaQuery("(max-width:500px)");
-  const [cart, setCart] = useState([]);
 
-  const { name, single_image, price, oldPrice, quantity ,seo} = item;
+
+  const { name, single_image, price, oldPrice, seo } = item;
   const dispatch = useDispatch();
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
-   
-
-    
   };
-console.log(item);
-
-
-  
-
 
   return (
     <Grid
@@ -55,13 +48,14 @@ console.log(item);
       xl={3}
       justifyContent="center"
       alignItems="center"
-      className={classes.movie}
+    
     >
       <Grow timeout={(i + 1) * 250} in key={i}>
-        <Box
+        <Paper
           sx={{
             p: 2,
             position: "relative",
+            
           }}
           className={classes.link}
         >
@@ -76,17 +70,16 @@ console.log(item);
           >
             <FavoriteIcon sx={{}} />
           </IconButton>
-         <Link to={`/productdetails/${seo}`}>
-         <img alt={name} className={classes.image} src={single_image} /></Link>
-          <Typography className={classes.title} variant="p">
+          <Link to={`/productdetails/${seo}`}>
+            <img alt={name} className={classes.image} src={single_image} />
+          </Link>
+          
+          <Typography  variant="p">
             {name}
           </Typography>
-          <Paper
+          <Paper className={classes.priceContainer}
             sx={{
-              display: "flex",
-              // justifyContent: "space-between",
-              gap: "10px",
-              alignItems: "center",
+             
               boxShadow: "none",
             }}
           >
@@ -113,50 +106,49 @@ console.log(item);
               ${oldPrice}.00
             </Typography>
           </Paper>
-          <Paper onClick={() => handleAddToCart(item)}
+          <Paper
             sx={{
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              border: "1px solid purple",
-              padding: "2px 5px",
-              width: "100%",
+              
+              
               boxShadow: "none",
               marginTop: "10px",
               color: "purple",
               fontWeight: "bold",
               fontSize: "10px",
-              "&:hover": {
-                border: "1px solid purple",
-              },
+          
             }}
           >
-            <ShoppingCartIcon
-              sx={{ fontSize: `${smallIcon ? "10px" : "20px"}` }}
-            />
+          
             <Button
-              
+              onClick={() => handleAddToCart(item)}
+              disabled={item.quantity === 0}
               variant="outlined"
-              sx={{
+              sx={{width: "100%",
                 fontSize: `${smallIcon ? "10px" : "12px"}`,
                 fontWeight: "bold",
                 color: "purple",
                 boxShadow: "none",
-                border: "none",
+                border: "1px solid purple",
                 "&:hover": {
-                  border: "none",
-                  backgroundColor: "transparent",
+              border: "1px solid purple",
+              backgroundColor: "transparent",
                 },
               }}
             >
+               <ShoppingCartIcon
+              sx={{ fontSize: `${smallIcon ? "10px" : "20px"}` }}
+            />
               {" "}
               Add To Cart
             </Button>
           </Paper>
-        </Box>
+        </Paper>
       </Grow>
     </Grid>
   );
 };
 
-export default SpecialOffer;
+export default CommonProdctCard;

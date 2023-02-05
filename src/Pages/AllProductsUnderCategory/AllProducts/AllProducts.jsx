@@ -1,12 +1,8 @@
 import { Box } from '@mui/material';
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { useGetProductsByCategoryQuery } from '../../../Redux/ProductApi/productsApiSlice';
-import FeaturedProduct from '../../Home/FeaturedProduct/FeaturedProduct';
-import FeaturedProducts from '../../Home/FeaturedProduct/FeaturedProducts';
-import ShopByCategory from '../../Home/ShopByCategory/ShopByCategory';
-import SpecialOffer from '../../Home/SpecialOffer/SpecialOffer';
+import CommonProdctCard from '../../SharedPages/CommonProdctCarts/CommonProdctCard';
 
 
 const AllProducts = () => {
@@ -15,24 +11,19 @@ const AllProducts = () => {
    const allProducts = useGetProductsByCategoryQuery(id.id);
    let products = allProducts?.data?.best_products.data;
 
-   
-  // const cartItems = useSelector(state=>state.CartItems)
-  // console.log(cartItems);
-
-
-
-
    return (
      <Box
        sx={{
          backgroundColor: "",
          display: "grid",
-         gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+         gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+         gap:"20px",
+         
        }}
      >
        {products?.map((item,i) => (
         
-         <SpecialOffer i={i} key={item.id} item={item} />
+         <CommonProdctCard i={i} key={item.id} item={item} />
        ))}
      </Box>
    );

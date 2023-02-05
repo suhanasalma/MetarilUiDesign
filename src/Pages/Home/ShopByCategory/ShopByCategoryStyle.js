@@ -8,12 +8,13 @@ export default makeStyles((theme) => ({
 
     [theme.breakpoints.down("sm")]: {
       justifyContent: "center",
+      alignItem:"center"
     },
   },
   shopCategoryContainer: {
     padding: "80px",
     [theme.breakpoints.down("md")]: {
-      padding: "0 30px 30px 30px",
+      padding: "0 20px 20px 20px",
     },
   },
 }));

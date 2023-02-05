@@ -10,13 +10,20 @@ export default makeStyles((theme) => ({
     textDecoration: "none",
     fontWeight: "bolder",
     background: "white",
-    padding: "10px",
-    maxWidth: "160px",
-    height: "180px",
+    padding: "5px",
+    maxWidth: "140px",
+    height: "160px",
+    margin:"auto",
     borderRadius: "5px",
+
     [theme.breakpoints.up("xs")]: {
       display: "flex",
       flexDirection: "column",
+      
+    },
+    [theme.breakpoints.down("sm")]: {
+      height: "120px",
+      
     },
     "&:hover": {
       cursor: "pointer",
@@ -25,13 +32,14 @@ export default makeStyles((theme) => ({
 
   image: {
     borderRadius: "10px",
-    height: "110px",
-    width: "100%",
-    padding: "10px",
+    height: "100%",
+    width: "60%",
+    padding: "5px",
     marginBottom: "10px",
     transition: "ease-in-out .2s",
-    objectFit: "cover",
-    objectPosition: "top",
+    objectFit: "contain",
+
+    
     "&:hover": {
       transform: "scale(1.05)",
     },
@@ -39,14 +47,5 @@ export default makeStyles((theme) => ({
       padding: "0px",
     },
   },
-  title: {
-    color: theme.palette.text.primary,
-    textOverflow: "ellipsis",
-    width: "130px",
-    whiteSpace: "nowrap",
-    overflow: "hidden",
-    marginTop: "10px",
-    marginBottom: 0,
-    textAlign: "center",
-  },
+
 }));

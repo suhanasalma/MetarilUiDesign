@@ -1,27 +1,22 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
   Divider,
   List,
-  ListItem,
-  ListItemText,
-  ListItemIcon,
+ 
   Box,
-  CircularProgress,
-  ListSubheader,
+
   Typography,
   Button,
 } from "@mui/material";
 import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
 
-import { Link } from "react-router-dom";
-import { useTheme } from "@mui/material/styles";
+
 import useStyles from "./sidebarStyles";
 import CloseIcon from "@mui/icons-material/Close";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import EventNoteOutlinedIcon from "@mui/icons-material/EventNoteOutlined";
 import logo from "../../../../Assests/Logo/logo.png";
-import { padding } from "@mui/system";
 import { useState } from "react";
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
 

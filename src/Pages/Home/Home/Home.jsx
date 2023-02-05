@@ -7,7 +7,6 @@ import ShopByCategory from "../ShopByCategory/ShopByCategory";
 import SpecialOffers from "../SpecialOffer/SpecialOffers";
 
 const Home = () => {
-  // const isMobile = useMediaQuery("(max-width:900px)");
   
   return (
     <Box sx={{ backgroundColor: "#F7F7F7" }}>

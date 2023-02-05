@@ -5,9 +5,7 @@
   margin: 0 auto;
 
 }
-/* .swiper-wrapper{
-  padding: 20px;
-} */
+
 .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
     content: 'next';
     position: absolute;
@@ -59,7 +57,7 @@ border-radius: 5px;
 
 @media screen and (max-Width:900px) {
 .swiper {
-  /* width: 100%; */
+
   width: 90%;
   height: 100%;
   margin: 0 auto;

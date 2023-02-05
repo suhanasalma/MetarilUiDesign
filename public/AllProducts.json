@@ -1,173 +1,202 @@
 [
   {
-    "id": 1,
+    "id": 589647896256841,
 
-    "title": "Defiant 1 men t-shirt",
+    "name": "Defiant 1 men t-shirt",
     "price": 80,
-    "img": "",
-    "isFeatured": true
+    "single_image": "https://waltonbd.com/image/catalog/category-banner/mobile/hm7-block.jpg",
+    "isFeatured": true,
+    "quantity": 10
   },
   {
-    "id": 17,
+    "id": 45454646465465464,
 
-    "title": "Defiant 2 men t-shirt",
+    "name": "Defiant 2 men t-shirt",
     "price": 80,
-    "img": "",
-    "isFeatured": true
+    "single_image": "https://waltonbd.com/image/catalog/category-banner/mobile/hm7-block.jpg",
+    "isFeatured": true,
+    "quantity": 10
   },
   {
-    "id": 18,
+    "id": 98796556498784351,
 
-    "title": "Defiant 3 men t-shirt",
+    "name": "Defiant 3 men t-shirt",
     "price": 80,
-    "img": "",
-    "isFeatured": true
+    "single_image": "https://waltonbd.com/image/catalog/category-banner/mobile/hm7-block.jpg",
+    "isFeatured": true,
+    "quantity": 10
   },
   {
-    "id": 19,
+    "id": 1654433534,
 
-    "title": "Defiant 4 men t-shirt",
+    "name": "Defiant 4 men t-shirt",
     "price": 80,
-    "img": "",
-    "isFeatured": true
+    "single_image": "https://waltonbd.com/image/catalog/category-banner/mobile/hm7-block.jpg",
+    "isFeatured": true,
+    "quantity": 10
   },
   {
-    "id": 2,
+    "id": 4654565444,
 
-    "title": "Men 1 t-shirt",
+    "name": "Men 1 t-shirt",
     "price": 80,
-    "img": "",
+    "single_image": "https://waltonbd.com/image/catalog/category-banner/mobile/hm7-block.jpg",
     "isFeatured": false,
     "specialOffer": true,
-    "oldPrice": 100
+    "oldPrice": 100,
+    "quantity": 10
   },
   {
-    "id": 20,
+    "id": 254868753540,
 
-    "title": "Men 2 t-shirt",
+    "name": "Men 2 t-shirt",
     "price": 80,
-    "img": "",
+    "single_image": "https://waltonbd.com/image/catalog/category-banner/mobile/hm7-block.jpg",
     "isFeatured": false,
     "specialOffer": true,
-    "oldPrice": 100
+    "oldPrice": 100,
+    "quantity": 10
   },
   {
-    "id": 21,
+    "id": 29877456465441,
 
-    "title": "Men 3 t-shirt",
+    "name": "Men 3 t-shirt",
     "price": 80,
-    "img": "",
+    "single_image": "https://waltonbd.com/image/catalog/category-banner/mobile/hm7-block.jpg",
     "isFeatured": false,
     "specialOffer": true,
-    "oldPrice": 100
+    "oldPrice": 100,
+    "quantity": 10
   },
   {
-    "id": 22,
+    "id": 2565454654654542,
 
-    "title": "Men 4 t-shirt",
+    "name": "Men 4 t-shirt",
     "price": 80,
-    "img": "",
+    "single_image": "https://waltonbd.com/image/catalog/category-banner/mobile/hm7-block.jpg",
     "isFeatured": false,
     "specialOffer": true,
-    "oldPrice": 100
+    "oldPrice": 100,
+    "quantity": 10
+
   },
   {
-    "id": 3,
+    "id": 36454544354,
 
-    "title": "Women t-shirt",
+    "name": "Women t-shirt",
     "price": 80,
-    "img": ""
+    "single_image": "https://waltonbd.com/image/catalog/category-banner/mobile/hm7-block.jpg"
   },
   {
-    "id": 4,
+    "id": 3565455444,
 
-    "title": "Women t-shirt",
+    "name": "Women t-shirt",
     "price": 80,
-    "img": ""
+    "single_image": "https://waltonbd.com/image/catalog/category-banner/mobile/hm7-block.jpg",
+    "quantity":10
   },
   {
-    "id": 5,
+    "id": 346545455,
 
-    "title": "Kids shirt",
+    "name": "Kids shirt",
     "price": 80,
-    "img": ""
+    "single_image": "https://waltonbd.com/image/catalog/category-banner/mobile/hm7-block.jpg",
+ 
+    "quantity":10
   },
   {
-    "id": 6,
+    "id": 644566554,
 
-    "title": "Kids shirt",
+    "name": "Kids shirt",
     "price": 80,
-    "img": ""
+    "single_image": "https://waltonbd.com/image/catalog/category-banner/mobile/hm7-block.jpg",
+
+    "quantity":10
   },
   {
-    "id": 7,
+    "id": 77897898966,
 
-    "title": "Sports Shirt",
+    "name": "Sports Shirt",
     "price": 80,
-    "img": ""
+    "single_image": "https://waltonbd.com/image/catalog/category-banner/mobile/hm7-block.jpg",
+
+    "quantity":10
   },
   {
-    "id": 8,
+    "id": 845456546,
 
-    "title": "Sports t-shirt",
+    "name": "Sports t-shirt",
     "price": 80,
-    "img": ""
+    "single_image": "https://waltonbd.com/image/catalog/category-banner/mobile/hm7-block.jpg",
+
+    "quantity":10
   },
   {
-    "id": 9,
+    "id": 94564565654,
 
-    "title": "Nick Shoe",
+    "name": "Nick Shoe",
     "price": 80,
-    "img": ""
+    "single_image": "https://waltonbd.com/image/catalog/category-banner/mobile/hm7-block.jpg",
+   
+    "quantity":10
   },
   {
-    "id": 10,
+    "id": 1056445656654,
 
-    "title": "Adidias Shoe",
+    "name": "Adidias Shoe",
     "price": 80,
-    "img": ""
+    "single_image": "https://waltonbd.com/image/catalog/category-banner/mobile/hm7-block.jpg",
+    "quantity":10
+
   },
   {
-    "id": 11,
+    "id": 1456454561,
 
-    "title": "Cool Hat",
+    "name": "Cool Hat",
     "price": 80,
-    "img": ""
+    "single_image": "https://waltonbd.com/image/catalog/category-banner/mobile/hm7-block.jpg",
+    "quantity":10
+
   },
   {
-    "id": 12,
+    "id": 14654565642,
 
-    "title": "Warn Hat",
+    "name": "Warn Hat",
     "price": 80,
-    "img": ""
+    "single_image": "https://waltonbd.com/image/catalog/category-banner/mobile/hm7-block.jpg",
+    "quantity":10
   },
   {
-    "id": 13,
+    "id": 154454563,
 
-    "title": "Rolex Watch",
+    "name": "Rolex Watch",
     "price": 80,
-    "img": ""
+    "single_image": "https://waltonbd.com/image/catalog/category-banner/mobile/hm7-block.jpg",
+    "quantity":10
   },
   {
-    "id": 14,
+    "id": 1456546564,
 
-    "title": "Times Watch",
+    "name": "Times Watch",
     "price": 80,
-    "img": ""
+    "single_image": "https://waltonbd.com/image/catalog/category-banner/mobile/hm7-block.jpg",
+    "quantity":10
   },
   {
-    "id": 15,
+    "id": 1546544565,
 
-    "title": "Denim Pants",
+    "name": "Denim Pants",
     "price": 80,
-    "img": "",
-    "isFeatured": true
+    "single_image": "https://waltonbd.com/image/catalog/category-banner/mobile/hm7-block.jpg",
+    "isFeatured": true,
+    "quantity":10
   },
   {
-    "id": 16,
+    "id": 145645646876,
 
-    "title": "Armani Jeans",
+    "name": "Armani Jeans",
     "price": 80,
-    "img": ""
+    "single_image": "https://waltonbd.com/image/catalog/category-banner/mobile/hm7-block.jpg",
+    "quantity":10
   }
 ]

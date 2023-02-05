@@ -6,15 +6,15 @@ import {
   Toolbar,
   Drawer,
   useMediaQuery,
-  Icon,
+
   Typography,
   Box,
-  CardMedia,
+
   Paper,
   InputBase,
 } from "@mui/material";
 import Badge from "@mui/material/Badge";
-import MenuItem from "@mui/material/MenuItem";
+
 import SearchIcon from '@mui/icons-material/Search';
 
 
@@ -22,13 +22,13 @@ import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
 
 import { Menu, } from "@mui/icons-material";
 import { Link, NavLink } from "react-router-dom";
-import { ClassNames } from "@emotion/react";
+
 import useStyles from "./Navstyles";
 
 import Sidebar from "./SideBar/Sidebar";
 import logo from '../../../Assests/Logo/logo.png'
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
-import { useEffect } from "react";
+
 import { useSelector } from "react-redux";
 
 
@@ -37,20 +37,17 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const isMobile = useMediaQuery("(max-width:900px)");
     const [open, setOpen] = useState(false);
-    const [items,setItems] = useState([])
 
-    // useEffect(()=>{
-    //   const cartItem = localStorage.getItem('mycart');
-    //   setItems(JSON.parse(cartItem))
-    // },[])
 
-    // console.log(items)
 
-    const cartItems = useSelector(state=>state.CartItems)
+
+    const cartItems = useSelector(state=>state?.CartItems)
     let totalQuantity = 0
+  if(cartItems){
     for (let product of cartItems) {
       totalQuantity += product.quantity;
     }
+  }
 
   const navMenu = [
    {link:"/home",name:'Home'},
@@ -71,6 +68,7 @@ const Navbar = () => {
         // position="fixed"
       >
         <Toolbar className={classes.toolbar}>
+          <Link to='/'>
           <Box sx={{ display: "flex", alignItems: "center", gap: "20px" }}>
             <img src={logo} alt="" />
             <Typography
@@ -79,7 +77,7 @@ const Navbar = () => {
             >
               Defiant
             </Typography>
-          </Box>
+          </Box></Link>
 
           <Box
             sx={{ display: "flex", gap: "10px", textTransform: "uppercase" }}
@@ -99,16 +97,17 @@ const Navbar = () => {
           </Box>
 
           {isMobile ? (
+            <Link to='/carts'>
             <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
               <IconButton
                 size="large"
                 aria-label="show 1 new notifications"
                 color="black"
               >
-              <Link to='/carts'>
+              
               <Badge badgeContent={totalQuantity} color="error">
                   <LocalMallOutlinedIcon />
-                </Badge></Link>
+                </Badge>
               </IconButton>
               <IconButton
                 edge="start"
@@ -116,11 +115,11 @@ const Navbar = () => {
                 onClick={() =>
                   setMobileOpen((prevMobileOpen) => !prevMobileOpen)
                 }
-                // className={[classes.menuButton, classes.btn]}
               >
                 <Menu />
               </IconButton>
             </Box>
+            </Link>
           ) : (
             <Box
               sx={{
@@ -131,7 +130,7 @@ const Navbar = () => {
               }}
               color="black"
             >
-              {/* <input type="text" /> */}
+
               <Paper
                 sx={{
                   // border: "1px solid",
@@ -183,7 +182,7 @@ const Navbar = () => {
         </Toolbar>
        {isMobile&& <Paper
           sx={{
-            // border: "1px solid",
+        
             display: "flex",
             alignItems: "center",
             gap: "10px",

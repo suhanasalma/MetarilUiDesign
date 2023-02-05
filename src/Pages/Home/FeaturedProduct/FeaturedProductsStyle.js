@@ -15,7 +15,7 @@ export default makeStyles((theme) => ({
   FeaturedContainer: {
     padding: "0 80px 80px 80px",
     [theme.breakpoints.down("md")]: {
-      padding: "0 30px 30px 30px",
+      padding: "0 20px 20px 20px",
     },
   },
 }));

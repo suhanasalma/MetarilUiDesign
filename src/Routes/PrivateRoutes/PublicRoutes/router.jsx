@@ -5,7 +5,6 @@ import Home from "../../../Pages/Home/Home/Home";
 import MyCarts from "../../../Pages/MyCart/MyCart/MyCarts";
 import ProductsDetails from "../../../Pages/ProductsDetails/ProductsDetails/ProductsDetails";
 
-import SubCategory from "../../../Pages/SubCategory/SubCategory";
 
 
 
@@ -22,10 +21,7 @@ export const router = createBrowserRouter([
         path: "/home",
         element: <Home />,
       },
-      {
-        path: "/subCategory",
-        element: <SubCategory />,
-      },
+      
       {
         path: "/productsUnderSubCat/:id",
         element: <AllProducts />,

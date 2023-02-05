@@ -1,29 +1,18 @@
 import React from 'react';
 import CommonTitle from '../../SharedPages/CommonTitle/CommonTitle';
-import { Box, Button, Container, Grid, Paper, useMediaQuery } from "@mui/material";
-import { useState } from 'react';
-import { useEffect } from 'react';
-// import CategoryCard from './CategoryCard';
+import { Box, Button } from "@mui/material";
+
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { fontWeight } from '@mui/system';
-// import Container from '@mui/material/Container';
 import useStyle from "./ShopByCategoryStyle";
 import CommonCategoryCards from '../../SharedPages/CommonCategoryCard/CommonCategoryCards';
-import { useSelector } from 'react-redux';
 import { useGetProductsCategoryQuery } from '../../../Redux/ProductApi/productsApiSlice';
 
 const ShopByCategory = () => {
-  //  const [categories,setCategories] = useState([])
-  //   const isMobile = useMediaQuery("(max-width:900px)");
-  //  useEffect(()=>{
-  //     fetch("category.json")
-  //       .then((res) => res.json())
-  //       .then((data) => setCategories(data));
-  //  },[])
+  
 
    const Allcategories = useGetProductsCategoryQuery()
    let categories = Allcategories?.data?.category.slice(0,4);
-   console.log(categories);
+
 
  
       const classes = useStyle();

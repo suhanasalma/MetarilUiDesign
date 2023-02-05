@@ -1,14 +1,19 @@
 import { Paper, Typography } from "@mui/material";
 import React from "react";
-import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import Divider from "@mui/material/Divider";
-import { Checkbox, FormControlLabel, FormGroup } from "@mui/material";
-import { Box } from "@mui/system";
+
+import { useSelector } from "react-redux";
 
 const CartSideBar = () => {
+  const cartItems = useSelector(state=>state?.CartItems)
+  let totalQuantity = 0
+  let price = 0
+if(cartItems){
+  for (let product of cartItems) {
+    totalQuantity += product.quantity;
+    price = totalQuantity*product.price
+  }
+}
+
   return (
     <div>
       <Typography variant="p">Order Summery</Typography>
@@ -20,7 +25,7 @@ const CartSideBar = () => {
         }}
       >
         <Typography variant="p">Total Items</Typography>
-        <Typography variant="p">1</Typography>
+        <Typography variant="p">{totalQuantity}</Typography>
       </Paper>
       <Paper
         sx={{
@@ -30,7 +35,7 @@ const CartSideBar = () => {
         }}
       >
         <Typography variant="p">Price</Typography>
-        <Typography variant="p">1</Typography>
+        <Typography variant="p"> $ {price}</Typography>
       </Paper>
       <Paper
         sx={{

@@ -2,13 +2,9 @@ import React from "react";
 import image from "../../../Assests/sliderImage/4.jpg";
 import {
   Box,
-  Typography,
-  Card,
-  CardContent,
-  CardMedia,
-  useMediaQuery,
+
 } from "@mui/material";
-import { Link } from "react-router-dom";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import useStyles from "./HomeSliderStyle";
 
@@ -21,7 +17,7 @@ import "./HomeSlider.css";
 
 // import required modules
 import { Navigation, Pagination } from "swiper";
-import data from "./HomeSliderInfo";
+
 
 
 
@@ -38,7 +34,7 @@ const HomeSlider = () => {
         loop={true}
         className="mySwiper"
       >
-        {data.map((item, i) => (
+        {[0,0,0].map(( i) => (
           <SwiperSlide key={i}>
            
             <Box className={classes.SliderContainer}>

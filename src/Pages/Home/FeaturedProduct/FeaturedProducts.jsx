@@ -1,17 +1,13 @@
 import React from "react";
 import CommonTitle from "../../SharedPages/CommonTitle/CommonTitle";
-import { Box, Button, Container, Grid, Paper } from "@mui/material";
+import { Box, Button, Grid,  } from "@mui/material";
 import { useState } from "react";
 import { useEffect } from "react";
 
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { fontWeight } from "@mui/system";
-import FeaturedProduct from "./FeaturedProduct";
+
 import useStyle from "./FeaturedProductsStyle";
+import CommonProdctCard from "../../SharedPages/CommonProdctCarts/CommonProdctCard";
 
 
 const FeaturedProducts = () => {
@@ -51,9 +47,10 @@ const FeaturedProducts = () => {
         spacing={{ xs: 2, md: 3, lg: 2, xl: 3 }}
         container
         className={classes.productsContainer}
+       
       >
         {featured?.slice(0, 4).map((item, i) => (
-          <FeaturedProduct item={item} i={i} key={i} />
+          <CommonProdctCard item={item} i={i} key={i} />
         ))}
       </Grid>
     </Box>

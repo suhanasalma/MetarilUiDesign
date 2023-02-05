@@ -4,7 +4,7 @@ export default makeStyles((theme) => ({
   categoryContainer: {
     display: "flex",
     flexWrap: "wrap",
-    // justifyContent: "space-between",
+
     overflow: "hidden",
 
     [theme.breakpoints.down("sm")]: {

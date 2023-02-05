@@ -1,17 +1,13 @@
 import React from "react";
 import CommonTitle from "../../SharedPages/CommonTitle/CommonTitle";
-import { Box, Button, Container, Grid, Paper } from "@mui/material";
+import { Box, Button,  Grid, } from "@mui/material";
 import { useState } from "react";
 import { useEffect } from "react";
 
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { fontWeight } from "@mui/system";
-import SpecialOffer from "./SpecialOffer";
+
 import useStyle from "./SpecialOffersStyle";
+import CommonProdctCard from "../../SharedPages/CommonProdctCarts/CommonProdctCard";
 
 
 const SpecialOffers = () => {
@@ -55,7 +51,7 @@ const SpecialOffers = () => {
         className={classes.productsContainer}
       >
         {featured?.slice(0, 4).map((item, i) => (
-          <SpecialOffer item={item} i={i} key={i} />
+          <CommonProdctCard item={item} i={i} key={i} />
         ))}
       </Grid>
     </Box>
