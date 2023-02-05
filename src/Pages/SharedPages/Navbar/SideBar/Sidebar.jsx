@@ -19,6 +19,7 @@ import EventNoteOutlinedIcon from "@mui/icons-material/EventNoteOutlined";
 import logo from "../../../../Assests/Logo/logo.png";
 import { useState } from "react";
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
+import { Link } from "react-router-dom";
 
 
 const categories = [
@@ -29,7 +30,7 @@ const categories = [
 ];
 const profile = [
   { link: "", name: "My Orders", icon: EventNoteOutlinedIcon },
-  { link: "", name: "My Cart", icon: LocalMallOutlinedIcon },
+  { link: "/carts", name: "My Cart", icon: LocalMallOutlinedIcon },
   { link: "", name: "My Wishlist", icon: FavoriteBorderOutlinedIcon },
 ];
 
@@ -51,7 +52,8 @@ const Sidebar = ({ setMobileOpen }) => {
           padding: "10px",
         }}
       >
-        <Box
+        <Link  to="/">
+        <Box  onClick={() => setMobileOpen((prevMobileOpen) => !prevMobileOpen)}
           sx={{
             display: "flex",
             alignItems: "center",
@@ -62,7 +64,7 @@ const Sidebar = ({ setMobileOpen }) => {
           <Typography sx={{ fontWeight: "bold", padding: "15px" }} variant="h6">
             Defiant
           </Typography>
-        </Box>
+        </Box></Link>
         <CloseIcon
           onClick={() => setMobileOpen((prevMobileOpen) => !prevMobileOpen)}
           sx={{ color: "black" }}
@@ -124,8 +126,9 @@ const Sidebar = ({ setMobileOpen }) => {
       <Box>
         <List>
           {profile.map((item, i) => (
+            <Link key={i} to={item.link}>
             <Box
-              key={i}
+              
               sx={{
                 display: "flex",
                 alignItems: "center",
@@ -145,7 +148,7 @@ const Sidebar = ({ setMobileOpen }) => {
               >
                 {item.name}
               </Typography>
-            </Box>
+            </Box></Link>
           ))}
         </List>
       </Box>

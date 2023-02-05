@@ -21,7 +21,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
 
 import { Menu, } from "@mui/icons-material";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 import useStyles from "./Navstyles";
 
@@ -37,6 +37,8 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const isMobile = useMediaQuery("(max-width:900px)");
     const [open, setOpen] = useState(false);
+    const location = useLocation()
+    console.log(location.pathname)
 
 
 
@@ -50,7 +52,7 @@ const Navbar = () => {
   }
 
   const navMenu = [
-   {link:"/home",name:'Home'},
+   {link:"/",name:'Home'},
    {link:"/men",name:'Men'},
    {link:"/women",name:'Women'},
    {link:"/clothes",name:'Kids'},
@@ -180,7 +182,7 @@ const Navbar = () => {
             </Box>
           )}
         </Toolbar>
-       {isMobile&& <Paper
+       {isMobile&& location.pathname==='/' && <Paper
           sx={{
         
             display: "flex",

@@ -19,18 +19,18 @@ export const cartReducers = (state = initialCarts, action) => {
         const newProduct = { ...action.payload };
 
         newProduct.quantity = 1;
+        localStorage.setItem('cart',JSON.stringify([...state, newProduct]))
 
         return [...state, newProduct];
       } else {
-      //  return("item not available");
-        // item.quantity = item.quantity += 1;
-
         return [...state];
       }
     case INCREASEFROMCART:
       return state.map((item) => {
         if (item.id === action.payload.id) 
-        {   
+    
+        
+        { 
           return {
             ...item,
             quantity: item.quantity + 1,
