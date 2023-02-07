@@ -7,6 +7,8 @@ import Divider from "@mui/material/Divider";
 import { Checkbox, FormControlLabel } from "@mui/material";
 import { Box } from "@mui/system";
 import { useDispatch } from "react-redux";
+import DeleteIcon from '@mui/icons-material/Delete';
+
 import {
   decreaseFromCart,
   increaseFromCart,
@@ -29,6 +31,7 @@ const MyCart = ({ item }) => {
  
     if(product.quantity === item.quantity){
       alert('item not available')
+      console.log("product", product,"item",item)
     }else{
       dispatch(increaseFromCart(item));
     }
@@ -47,18 +50,15 @@ const MyCart = ({ item }) => {
   };
 
   return (
-    <Paper
+    <Paper  
       sx={{
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
       }}
-    >
-      <FormControlLabel
-        onClick={() => handleONClick(item)}
-        control={<Checkbox />}
-        // label="Disabled"
-      />
+      
+    ><DeleteIcon  onClick={() => handleONClick(item)}/>
+     
       <img src={item?.single_image} style={{ width: "50px" }} alt="Image" />
       <Typography variant="p">{item?.name}</Typography>
 

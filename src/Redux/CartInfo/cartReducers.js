@@ -5,10 +5,11 @@ import {
   INCREASEFROMCART,
   REMOVEITEM,
 } from "./cartConstance";
-
-const initialCarts = [
-  //   { id: 3, name: "Dell E1916HV 18.5 Inch", quantity: 35, price: 9300 }
-];
+const localCart = localStorage.getItem('cart')!==null?JSON.parse(localStorage.getItem('cart')):[]
+const initialCarts = localCart
+// [
+//   //   { id: 3, name: "Dell E1916HV 18.5 Inch", quantity: 35, price: 9300 }
+// ];
 
 
 export const cartReducers = (state = initialCarts, action) => {
@@ -26,6 +27,10 @@ export const cartReducers = (state = initialCarts, action) => {
         return [...state];
       }
     case INCREASEFROMCART:
+      localStorage.setItem('cart',JSON.stringify(state.map(item=>item.id === action.payload.id?{
+        ...item,
+        quantity: item.quantity + 1,
+      }:item)))
       return state.map((item) => {
         if (item.id === action.payload.id) 
     
@@ -40,6 +45,10 @@ export const cartReducers = (state = initialCarts, action) => {
         return item;
       });
     case DECREASEFROMCART:
+      localStorage.setItem('cart',JSON.stringify(state.map(item=>item.id === action.payload.id?{
+        ...item,
+        quantity: item.quantity - 1,
+      }:item)))
       return state.map((item) => {
         if (item.id === action.payload.id) {
           return {
@@ -52,6 +61,7 @@ export const cartReducers = (state = initialCarts, action) => {
       });
 
     case REMOVEITEM:
+      localStorage.setItem('cart',JSON.stringify(state.filter((item) => item.id !== action.payload.id)))
       return state.filter((item) => item.id !== action.payload.id);
 
     default:

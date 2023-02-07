@@ -2,7 +2,7 @@
 
 
 
-import React from "react";
+import React, { useEffect } from "react";
 
 import Typography from "@mui/material/Typography";
 import {
@@ -22,6 +22,7 @@ import useStyle from "./CommonProdctCardStyle";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../../Redux/CartInfo/cartActions";
+import { useGetProductsDetailsQuery } from "../../../Redux/ProductApi/productsApiSlice";
 
 
 const CommonProdctCard = ({ item, i }) => {
@@ -29,10 +30,12 @@ const CommonProdctCard = ({ item, i }) => {
   const isMobile = useMediaQuery("(max-width:900px)");
 
   const smallIcon = useMediaQuery("(max-width:500px)");
-
+  
 
   const { name, single_image, price, oldPrice, seo } = item;
+  console.log(item)
   const dispatch = useDispatch();
+
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
